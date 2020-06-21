@@ -1,0 +1,21 @@
+This is web scraping project. here i have to scrape the wongnai website (http://www.wongnai.com). let's check
+the steps for configuration and run the entire scraping process.
+
+1. mkdir wongnai
+2. cd wongnai
+3. virtualenv venv -p python3
+4. pip install -r requirements.txt
+
+Now, all basic code is done, need to run the wongnai_main file. there is two endpoint one is for scrape the data
+and another is for upload s3 bucket in aws.
+1. http://127.0.0.1:5000/scrape_restaurant  --> GET Method
+
+2. http://127.0.0.1:5000/import_image --> POST Method
+   values = {
+        "json_path": /wongnai/restaurant_2020_06_21_19_09_42.json
+        "image_dir_path": /wongnai/image_dir/
+   }
+
+3. All the scraping data will be store in json and restaurant.db(SqlLite) file.
+
+4. There is one more python script for download the image and upload to aws s3 bucket.
